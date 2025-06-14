@@ -121,7 +121,13 @@ body {
 --------------------------------------------------------------*/
 
 .skiptranslate iframe,
-.goog-te-banner-frame.skiptranslate {
+.goog-te-banner-frame.skiptranslate,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.VIpgJd-ZVi9od-aZ2wEe-OiiCO,
+#goog-gt-tt,
+#goog-gt-tt *,
+#goog-gt-vt,
+#goog-gt-vt * {
     display: none !important;
 }
 
@@ -328,51 +334,56 @@ body {
 .caption-draggable {
     z-index: 14;
     display: none;
+    flex-direction: column;
     position: fixed;
-    /* end center screen  */
     height: var(--caption-height);
     width: var(--caption-width);
     min-height: var(--caption-height);
     min-width: var(--caption-width);
     background: var(--msger-bg);
     border: var(--border);
-    /* text-align: justify; */
     resize: both;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: var(--box-shadow);
-    transition: width 0.5s ease-in-out;
+    transition:
+        width 0.4s ease-in-out,
+        height 0.4s ease-in-out;
 }
 
 .caption {
+    display: flex;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     justify-content: space-between;
     background: var(--msger-bg);
+    border-radius: 12px;
 }
 
+/* Draggable Header */
 .caption-header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.2);
-    color: #666;
-    cursor: move;
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    cursor: grab;
+    font-weight: bold;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .caption-header-title button,
 .caption-header-options button {
-    padding: 5px;
-    /* border: var(--border); */
+    padding: 6px 10px;
     border: none;
     font-size: 1rem;
     background: transparent;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 6px;
     transition: all 0.3s ease-in-out;
-    transition: background 0.23s;
 }
 
 .caption-header-title button:hover,
@@ -380,16 +391,20 @@ body {
     background: var(--body-bg);
 }
 
+/* Chat Box */
 .caption-chat {
     flex: 1;
     overflow-y: auto;
-    padding: 10px;
+    padding: 12px;
     background: transparent;
-    max-width: 95%;
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
+/* Scrollbar Styling */
 .caption-chat::-webkit-scrollbar {
-    width: 5px;
+    width: 6px;
 }
 
 .caption-chat::-webkit-scrollbar-track {
@@ -398,27 +413,36 @@ body {
 
 .caption-chat::-webkit-scrollbar-thumb {
     background: black;
-    /*aqua;*/
+    border-radius: 5px;
 }
 
+/* Input Area */
 .caption-inputarea {
-    display: inline-flex;
+    display: flex;
+    align-items: center;
     padding: 10px;
-    border: none;
-    border: var(--border);
+    border-top: var(--border);
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .caption-inputarea select {
+    min-width: 50px;
     margin: 0 5px;
+    padding: 5px;
     background: var(--select-bg) !important;
+    border-radius: 6px;
     cursor: pointer;
+    border: none;
 }
 
+/* Message Bubble */
 .left-msg .msg-caption-bubble {
     background: var(--left-msg-bg);
     border-bottom-left-radius: 0;
     color: #fff;
     width: var(--msger-bubble-width);
+    padding: 8px 12px;
+    border-radius: 8px;
 }
 
 #captionMaxBtn,
@@ -426,13 +450,16 @@ body {
     display: none;
 }
 
+/* Speech Recognition Buttons */
 #speechRecognitionStart,
 #speechRecognitionStop {
     margin: 0 5px;
+    padding: 6px 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     color: #fff;
     background-color: transparent;
+    transition: background 0.3s;
 }
 
 #speechRecognitionStart:hover,
@@ -464,46 +491,42 @@ body {
 }
 
 .msger {
+    display: flex;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     justify-content: space-between;
     background: var(--msger-bg);
+    border-radius: 12px;
 }
 
 /*--------------------------------------------------------------
 # Chat room header
 --------------------------------------------------------------*/
 
-.msger-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.2);
-    color: #666;
-    cursor: move;
-}
-
+.msger-header,
 .msger-private-header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.2);
-    color: #666;
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    cursor: grab;
+    font-weight: bold;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .msger-header-title button,
 .msger-header-options button {
-    padding: 5px;
-    /* border: var(--border); */
+    padding: 6px 10px;
     border: none;
     font-size: 1rem;
     background: transparent;
     color: #fff;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
-    transition: background 0.23s;
 }
 
 .msger-header-title button:hover,
@@ -523,13 +546,15 @@ body {
 .msger-chat {
     flex: 1;
     overflow-y: auto;
-    padding: 10px;
+    padding: 12px;
     background: transparent;
-    max-width: 95%;
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .msger-chat::-webkit-scrollbar {
-    width: 5px;
+    width: 6px;
 }
 
 .msger-chat::-webkit-scrollbar-track {
@@ -700,7 +725,7 @@ button:hover {
 .msger-inputarea {
     display: flex;
     padding: 10px;
-    background: var(--msger-bg);
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .msger-input {
@@ -737,13 +762,12 @@ button:hover {
 --------------------------------------------------------------*/
 
 .msger-input-buttons {
-    padding: 10px;
-    background: var(--msger-bg);
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .msger-input-buttons button {
-    padding: 5px;
-    /* border: var(--border); */
+    padding: 5px 6px;
     border: none;
     border-radius: 5px;
     font-size: 1rem;
@@ -928,6 +952,34 @@ button:hover {
     align-items: center;
 }
 
+#qrRoomPopupContainer {
+    z-index: 9999;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    background: var(--body-bg);
+    border: var(--border);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+#qrText {
+    margin-top: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+#qrRoomPopup {
+    width: 256px;
+    height: 256px;
+}
+
 /*--------------------------------------------------------------
 # My settings
 --------------------------------------------------------------*/
@@ -973,9 +1025,15 @@ button:hover {
     }
 
     #bottomButtons button {
-        width: 42px;
-        padding: 10px;
-        font-size: 1.2rem;
+        width: 36px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    #bottomButtons button {
+        width: 30px;
+        font-size: 0.6rem;
     }
 }
 
@@ -1037,8 +1095,6 @@ button:hover {
 .inline-check-box {
     margin-bottom: 20px;
     display: inline-flex;
-    justify-content: center; /* Vertical centering */
-    align-items: center; /* Horizontal centering */
     text-align: left;
     color: white;
 }
@@ -1081,8 +1137,6 @@ button:hover {
 }
 
 .extra-info-container {
-    min-height: 175px;
-    max-height: 175px;
     margin-top: 15px;
     border-radius: 5px;
     background: var(--body-bg);
@@ -1092,7 +1146,7 @@ button:hover {
 
 #extraInfo {
     padding: 10px;
-    font-size: 12px;
+    font-size: 14px;
     color: #fff;
     /* background: var(--select-bg); */
     border-radius: 10px;
@@ -1182,32 +1236,72 @@ button:hover {
 --------------------------------------------------------------*/
 
 #mySettingsTable {
-    /* margin-top: 5px; */
     width: 100%;
     color: #fff;
+    table-layout: auto;
     border-collapse: collapse;
-    border-style: hidden;
     border-radius: 10px;
     background: var(--body-bg);
-    /* border-radius: 5px; */
-    /* box-shadow: 0 0 0 1px #666; */
-}
-#mySettingsTable td,
-th {
-    padding: 10px;
-}
-#mySettingsTable tr td {
-    text-align: left;
-}
-#mySettingsTable tr:nth-child(even) {
-    /* background-color: #2b2b2b; */
 }
 
-.width-130 {
-    width: 130px;
+#mySettingsTable td,
+#mySettingsTable th {
+    padding: 10px;
+    text-align: left;
 }
-.width-180 {
-    width: 160px;
+
+#mySettingsTable td:first-child {
+    width: auto;
+}
+
+#mySettingsTable td:last-child {
+    width: 140px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Optional alternating row background */
+/* #mySettingsTable tr:nth-child(even) {
+    background: var(--select-bg);
+} */
+
+#mySettingsTable i {
+    border: none;
+    border-radius: 5px;
+}
+
+#mySettingsTable select {
+    width: 100px !important;
+}
+
+/*--------------------------------------------------------------
+# Shortcut Table
+--------------------------------------------------------------*/
+
+#shortcutsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    color: #fff;
+    border-radius: 10px;
+    background: var(--body-bg);
+}
+#shortcutsTable th,
+#shortcutsTable td {
+    padding: 5px;
+    /* border: var(--border); */
+}
+#shortcutsTable th {
+    background: var(--body-bg);
+    font-weight: bold;
+}
+#shortcutsTable td i {
+    color: #007bff;
+}
+#shortcutsTable tr:nth-child(even) {
+    background: var(--body-bg);
 }
 
 /*--------------------------------------------------------------
@@ -1281,7 +1375,7 @@ th {
     margin-top: 15px;
     padding: 6px 12px;
     width: 100%;
-    max-height: 530px;
+    max-height: 585px;
     min-height: 480px;
     border-top: none;
     background-color: var(--body-bg);
@@ -1399,7 +1493,7 @@ input:checked + .slider:before {
 --------------------------------------------------------------*/
 
 .swal2-popup {
-    border: 0.5px solid rgb(255 255 255 / 32%) !important;
+    border: var(--border) !important;
     /* box-shadow: var(--box-shadow) !important; */
 }
 
@@ -1792,6 +1886,13 @@ hr {
     display: block;
 }
 
+.top-center {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .center {
     position: fixed;
     top: 50%;
@@ -2009,6 +2110,10 @@ hr {
 # Common
 --------------------------------------------------------------*/
 
+/* strong {
+    color: #007bff;
+} */
+
 .ml-10 {
     margin: 10px;
 }
@@ -2045,6 +2150,10 @@ hr {
 
 .green {
     color: rgb(0, 255, 71) !important;
+}
+
+.b-yellow {
+    color: #d4a017 !important;
 }
 
 /*

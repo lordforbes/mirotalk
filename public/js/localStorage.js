@@ -17,7 +17,7 @@ class LocalStorage {
             share_on_join: true,
             show_chat_on_msg: true,
             speech_in_msg: false,
-            mic_auto_gain_control: true,
+            mic_auto_gain_control: false,
             mic_echo_cancellations: true,
             mic_noise_suppression: true,
             mic_sample_rate: 0, // 0: 48000 Hz 1: 44100 Hz
@@ -29,6 +29,8 @@ class LocalStorage {
             screen_fps: 1, // default 30fps
             pitch_bar: true,
             sounds: true,
+            keep_buttons_visible: false,
+            keyboard_shortcuts: false,
             video_obj_fit: 2, // cover
             theme: 0, // dark
             theme_color: '#000000', // custom theme color
